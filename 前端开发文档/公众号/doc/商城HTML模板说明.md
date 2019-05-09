@@ -1,3 +1,5 @@
+# 公众号H5商城HTML模板说明
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,6 +57,9 @@
                         </form>
                     </div>
                 </div>
+                <div>
+                	<button id="btn">click</button>
+                </div>
             </div>
             <!-- 中间内容容器end -->
             <!-- start底部部分  -->
@@ -77,3 +82,40 @@
 </body>
 
 </html>
+```
+
+## 模板必须的css样式
+- foxui.min.css——人人商城标准样式
+- foxui.diy.css——人人商城自定义样式
+- iconfont.css——字体样式
+
+## REM适配说明
+```
+html {
+	font-size: 20px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-family: sans-serif;
+}
+@media only screen and (min-width: 400px) {
+	html {
+		font-size: 21.33333333px !important;
+	}
+}
+
+@media only screen and (min-width: 414px) {
+	html {
+		font-size: 22.08px !important;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	html {
+		font-size: 25.6px !important;
+	}
+}
+```
+- 设备小于400px 1rem=20px
+- 设备大于400px 小于 414px 1rem=21.33333333px
+- 设备大于414px 小于 480px 1rem=22.08px
+- 设备大于480px 1rem=25.6px
