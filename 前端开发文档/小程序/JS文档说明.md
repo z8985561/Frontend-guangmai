@@ -96,14 +96,14 @@ core.post("diypage/index/main",{'type': 'index'},res=>{
 ```
 const app = getApp();
 const core = app.requirejs("core");
-app.alert("hello world!")
+core.alert("hello world!")
 ```
 - .confirm("msg",successCallback,failCallback)
 >
 ```
 const app = getApp();
 const core = app.requirejs("core");
-app.confirm("你是不是帅哥？",()=>{
+core.confirm("你是不是帅哥？",()=>{
   console.log(true)
 },()=>{
   console.log(false)
