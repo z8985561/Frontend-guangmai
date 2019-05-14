@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="telephone=no"/>
     <title>H5模板</title>
     <!-- 商城UI样式库（必须） -->
     <link rel="stylesheet" href="lib/foxui/css/foxui.min.css">
@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="fonts/iconfont.css">
     <!-- 商城自定义样式 -->
     <link rel="stylesheet" href="css/foxui.diy.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- requireJS相关引入（必须） -->
     <script src="lib/require.js"></script>
     <script src="js/myconfig-app.js"></script>
+
     <script language="javascript">
-        require(['../js/app/core'], function(modal) {
+        require(['../js/app/core'], function (modal) {
             modal.init({
                 siteUrl: "http://www.w7.cc/",
                 baseUrl: "./index.php?i=4&c=entry&m=ewei_shopv2&do=mobile&r=ROUTES"
@@ -26,54 +28,811 @@
 </head>
 
 <body ontouchstart>
-    <!-- 人人商城H5模板基本结构 -->
-    <!-- fui-page-group主体结构 -->
-    <section class='fui-page-group statusbar'>
-        <div class='fui-page fui-page-current'>
-            <!-- start头部结构（必须） -->
-            <div class="fui-header">
-                <!-- 左边返回按钮 不需要可以删除-->
-                <div class="fui-header-left">
-                    <a class="back"></a>
-                </div>
-                <!-- 标题 -->
-                <div class="title">H5模板</div>
-                <!-- 右边可以放分享按钮 -->
-                <div class="fui-header-right"></div>
+<!-- 人人商城H5模板基本结构 -->
+<!-- fui-page-group主体结构 -->
+<section class='fui-page-group statusbar'>
+    <div class='fui-page fui-page-current'>
+        <!-- start头部结构（必须） -->
+        <div class="fui-header">
+            <!-- 左边返回按钮 不需要可以删除-->
+            <div class="fui-header-left">
+                <a class="back"></a>
             </div>
-            <!-- 头部结构end -->
-            <!-- start中间内容容器 fui-content（必须） -->
-            <div class="fui-content navbar">
-                <div class="fui-searchbar bar" style="z-index: 0;">
-                    <div class="searchbar" style="background: #f1f1f2; padding: 10px 10px;">
-                        <form action="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=creditshop.lists" method="post" style="position: relative;left:0;top:0;">
-                            <input type="submit" class="searchbar-cancel searchbtn" value="搜索" style="top: 0; right: 0">
-                            <div class="search-input radius" style="background: #ffffff;">
-                                <i class="icon icon-search" style="color: #b4b4b4;"></i>
-                                <input type="search" placeholder="请输入关键字进行搜索" class="search" name="keywords" style="text-align: left; color: #999999; background: none;">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- 中间内容容器end -->
-            <!-- start底部部分  -->
-            <!-- 底部区域 -->
-            <div class="fui-footer"></div>
-            <!-- 底部导航区域 -->
-            <div class="fui-navbar"></div>
-            <!-- 底部部分end -->
+            <!-- 标题 -->
+            <div class="title">H5模板</div>
+            <!-- 右边可以放分享按钮 -->
+            <div class="fui-header-right"></div>
         </div>
-    </section>
+        <!-- 头部结构end -->
+        <!-- start中间内容容器 fui-content（必须） -->
+        <div class="fui-content navbar">
 
-    <script>
-    	//页面初始化（必须）
-    	require(['../js/app/init']);
-    	//requireJS使用示例
-    	require(['jquery','jquery.gcjs'],function($,gc){
-    		console.log($)
-    	})
-    </script>
+            <!-- 搜索模块 start-->
+            <br>
+
+            <div>搜索框</div>
+
+            <br>
+
+
+            <div class="fui-searchbar">
+                <div class="searchbar">
+                    <form action="" method="post">
+                        <input type="submit" class="searchbar-cancel searchbtn" value="搜索">
+                        <div class="search-input radius">
+                            <i class="icon icon-search"></i>
+                            <input type="search" placeholder="请输入关键字进行搜索" class="search" name="keywords">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+
+            <div>固定搜索框</div>
+            <br>
+
+            <div class="diy-fixedsearch fixed">
+                <div class="background"></div>
+                <form action="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=goods&amp;merchid=0"
+                      method="post" class="inner" id="fixedsearch">
+                    <a class="leftnav" href="javascript:;">
+                        <i class="icon icon-shop"></i>
+                    </a>
+                    <div class="center round">
+                        <input type="search" value="" placeholder="输入关键字进行搜索">
+                    </div>
+                    <a class="rightnav" href="javascript:;">
+                        <i class="icon icon-cart"></i>
+                    </a>
+                    <script>function fixedsearch() {
+                        $('#fixedsearch').submit();
+                    }</script>
+                </form>
+            </div>
+            <!-- 搜索模块 end -->
+
+            <!-- 通知公告 start -->
+            <br>
+
+            <div> 通知公告</div>
+
+            <br>
+            <div class="fui-notice" data-speed="4">
+                <div class="image"><img
+                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/hotdot.png"
+                        onerror="this.src='../addons/ewei_shopv2/static/images/hotdot.jpg'"></div>
+                <div class="icon"></i></div>
+                <div class="text">
+                    <ul>
+
+
+                        <li><a href="">新版商城上线</a></li>
+                        <li><a href="">5.1活动</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 通知公告 end -->
+
+
+            <!-- 单图组 start -->
+            <br>
+
+            <div> 单图组</div>
+
+            <br>
+            <div class="fui-picture">
+                <a href="">
+                    <img src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/banner-1.jpg"
+                         data-lazyloaded="true">
+                </a>
+                <a href="">
+                    <img src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/banner-2.jpg"
+                         data-lazyloaded="true">
+                </a>
+            </div>
+
+            <!-- 单图组 end -->
+
+            <br>
+
+            <div>图片轮播</div>
+            <br>
+
+            <!-- 图片轮播 start -->
+
+            <div class="fui-swipe">
+                <div class="fui-swipe-wrapper">
+                    <a class="fui-swipe-item"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=sale.coupon"><img
+                            src="http://img2.y01.cn/images/4/2019/04/a1E31L1z19RYg5lyn9ZE8611nRR3fu.jpg"></a>
+                    <a class="fui-swipe-item" href=""><img
+                            src="http://img2.y01.cn/images/4/2019/04/phpDd7j8KQsDSE7BqnJZZnyK8RrRNe.jpg"></a>
+                </div>
+                <style>
+                    .fui-swipe-page .fui-swipe-bullet {
+                        background: #ffffff;
+                        opacity: 0.8;
+                    }
+
+                    .fui-swipe-page .fui-swipe-bullet.active {
+                        opacity: 1;
+                    }
+                </style>
+                <div class="fui-swipe-page left round">
+                    <div class="fui-swipe-bullet active"></div>
+                    <div class="fui-swipe-bullet"></div>
+                </div>
+            </div>
+            <!-- 图片轮播 end  -->
+
+
+            <!-- 图片橱窗 start -->
+            <br>
+
+            <div>图片橱窗</div>
+            <br>
+            <div class="fui-picturew row-4">
+                <div class="item">
+                    <a href="" data-nocache="true"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/cube-1.jpg"
+                            data-lazyloaded="true"></a>
+                </div>
+                <div class="item">
+                    <a href="" data-nocache="true"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/cube-2.jpg"
+                            data-lazyloaded="true"></a>
+                </div>
+                <div class="item">
+                    <a href="" data-nocache="true"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/cube-3.jpg"
+                            data-lazyloaded="true"></a>
+                </div>
+                <div class="item">
+                    <a href="" data-nocache="true"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/cube-4.jpg"
+                            data-lazyloaded="true"></a>
+                </div>
+            </div>
+            <!-- 图片橱窗 end -->
+
+
+            <!-- 图片展播 start -->
+            <br>
+
+            <div>图片展播</div>
+            <br>
+
+
+            <div class="fui-picturew row-3">
+                <a class="item">
+                    <div class="image">
+                        <img
+                                src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-1.jpg">
+                        <div class="title">这里是上标题</div>
+                    </div>
+                    <div class="text center">这里是下标题</div>
+                </a>
+                <a class="item">
+                    <div class="image">
+                        <img
+                                src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-2.jpg">
+                        <div class="title">这里是上标题</div>
+                    </div>
+                    <div class="text center">这里是下标题</div>
+                </a>
+                <a class="item">
+                    <div class="image">
+                        <img
+                                src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-4.jpg">
+                        <div class="title">这里是上标题</div>
+                    </div>
+                    <div class="text center">这里是下标题</div>
+                </a>
+            </div>
+
+
+            <!-- 图片展播 end -->
+
+            <br>
+
+            <div> 按钮组 1</div>
+            <br>
+
+
+            <!-- icon-group start -->
+
+            <div class="fui-icon-group noborder col-4 ">
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img src="http://img1.y01.cn/65decf7cfcfee4fbda5c731d1def0e12.png"></div>
+                    <div class="text">新品上市</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-2.png">
+                    </div>
+                    <div class="text">热卖商品</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-3.png">
+                    </div>
+                    <div class="text">限时抢购</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-4.png">
+                    </div>
+                    <div class="text">促销商品</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                    </div>
+                    <div class="text">我要赚钱</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                    </div>
+                    <div class="text">我的小店</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                    </div>
+                    <div class="text">商家入驻</div>
+                </a>
+                <a class="fui-icon-col external" href="javascript:;">
+                    <div class="icon"><img
+                            src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                    </div>
+                    <div class="text">代理进货</div>
+                </a>
+            </div>
+            <br>
+
+            <div> 按钮组 1 分页</div>
+            <br>
+            <!-- icon-group swiper start -->
+
+            <div class="swiper swiper-M1520937223598" data-element=".swiper-M1520937223598" data-view="1">
+                <div class="swiper-container  fui-icon-group noborder col-4 ">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://img1.y01.cn/65decf7cfcfee4fbda5c731d1def0e12.png"></div>
+                                <div class="text">新品上市</div>
+                            </a>
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-2.png">
+                                </div>
+                                <div class="text">热卖商品</div>
+                            </a>
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-3.png">
+                                </div>
+                                <div class="text">限时抢购</div>
+                            </a>
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-4.png">
+                                </div>
+                                <div class="text">促销商品</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                                </div>
+                                <div class="text">我要赚钱</div>
+                            </a>
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                                </div>
+                                <div class="text">我的小店</div>
+                            </a>
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                                </div>
+                                <div class="text">商家入驻</div>
+                            </a>
+                            <a class="fui-icon-col external" href="javascript:;">
+                                <div class="icon"><img
+                                        src="http://meiti.dm.com/addons/ewei_shopv2/plugin/diypage/static/images/default/icon-1.png">
+                                </div>
+                                <div class="text">代理进货</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- icon-group swiper end -->
+
+
+            <!-- icon-group end -->
+            <br>
+
+            <div> 按钮组 2</div>
+            <br>
+
+            <!-- menu group start -->
+            <div class="fui-menu-group">
+                <a class="fui-menu-item"> 我的积分</a>
+                <a class="fui-menu-item"> 兑换记录</a>
+            </div>
+            <!-- menu group end -->
+
+
+            <!-- 图标组 start -->
+            <br>
+
+            <div> 图标组 2</div>
+            <br>
+            <div class="fui-icon-group noborder col-4 selecter" style="background-color: #ffffff;
+                border-top: 1px solid #ffffff;        border-bottom: 1px solid #ffffff;">
+                <a class="fui-icon-col">
+                    <div class="icon icon-green radius"><i class="icon icon-daifukuan"></i></div>
+                    <div class="text">待付款</div>
+                </a>
+                <a class="fui-icon-col" data-nocache="true">
+                    <div class="icon icon-green radius"><i class="icon icon-fahuo"></i></div>
+                    <div class="text">待发货</div>
+                </a>
+                <a class="fui-icon-col" data-nocache="true">
+                    <div class="icon icon-green radius"><i class="icon icon-daishouhuo"></i></div>
+                    <div class="text">待收货</div>
+                </a>
+                <a class="fui-icon-col" data-nocache="true">
+                    <div class="icon icon-green radius"><i class="icon icon-daituikuan"></i></div>
+                    <div class="text">退换货</div>
+                </a>
+            </div>
+
+
+            <!-- 图标组 end -->
+
+            <br>
+
+            <div> 选项卡</div>
+
+            <br>
+
+            <!-- 选项卡 start -->
+
+
+            <div class="fui-tab fui-tab-success">
+                <a class=" external" href="">选项卡文字</a>
+                <a class=" external" href="">选项卡文字</a>
+            </div>
+
+
+            <!-- 选项卡 end -->
+            <br>
+
+            <div> 列表导航</div>
+
+            <br>
+
+            <!-- 列表导航 start -->
+
+            <div class="fui-cell-group fui-cell-click">
+                <a class="fui-cell" href="">
+                    <div class="fui-cell-icon"></div>
+                    <div class="fui-cell-text">文字1</div>
+                    <div class="fui-cell-remark">
+                        查看
+                    </div>
+                </a>
+                <a class="fui-cell" href="">
+                    <div class="fui-cell-icon"></div>
+                    <div class="fui-cell-text">文字2</div>
+                    <div class="fui-cell-remark">
+                        查看
+                    </div>
+                </a>
+                <a class="fui-cell" href="">
+                    <div class="fui-cell-icon"></div>
+                    <div class="fui-cell-text">文字3</div>
+                    <div class="fui-cell-remark">
+                        查看
+                    </div>
+                </a>
+
+            </div>
+
+
+            <!-- 列表导航 end -->
+            <!-- 商户组 start -->
+            <br>
+
+            <div> 商户组</div>
+
+            <br>
+
+            <div class="fui-list-group merchgroup"
+                 data-itemdata="{&quot;params&quot;:{&quot;merchdata&quot;:&quot;0&quot;,&quot;merchnum&quot;:&quot;6&quot;,&quot;merchsort&quot;:&quot;&quot;,&quot;catename&quot;:&quot;&quot;,&quot;cateid&quot;:&quot;&quot;,&quot;groupname&quot;:&quot;&quot;,&quot;groupid&quot;:&quot;&quot;,&quot;openlocation&quot;:&quot;0&quot;},&quot;style&quot;:{&quot;background&quot;:&quot;#ffffff&quot;,&quot;titlecolor&quot;:&quot;#333333&quot;,&quot;textcolor&quot;:&quot;#666666&quot;,&quot;rangecolor&quot;:&quot;#ff5555&quot;,&quot;locationcolor&quot;:&quot;#ff5555&quot;,&quot;margintop&quot;:&quot;10&quot;},&quot;data&quot;:{&quot;C1557735219798&quot;:{&quot;name&quot;:&quot;\u5546\u6237\u540d\u79f0A&quot;,&quot;desc&quot;:&quot;\u8fd9\u91cc\u662f\u5546\u6237A\u7684\u4ecb\u7ecd&quot;,&quot;thumb&quot;:&quot;&quot;,&quot;merchid&quot;:&quot;&quot;},&quot;C1557735219799&quot;:{&quot;name&quot;:&quot;\u5546\u6237\u540d\u79f0B&quot;,&quot;desc&quot;:&quot;\u8fd9\u91cc\u662f\u5546\u6237B\u7684\u4ecb\u7ecd&quot;,&quot;thumb&quot;:&quot;&quot;,&quot;merchid&quot;:&quot;&quot;},&quot;C1557735219800&quot;:{&quot;name&quot;:&quot;\u5546\u6237\u540d\u79f0C&quot;,&quot;desc&quot;:&quot;\u8fd9\u91cc\u662f\u5546\u6237C\u7684\u4ecb\u7ecd&quot;,&quot;thumb&quot;:&quot;&quot;,&quot;merchid&quot;:&quot;&quot;}},&quot;id&quot;:&quot;merchgroup&quot;}"
+                 data-openlocation="0">
+                <div class="fui-list jump">
+                    <a class="fui-list-media"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch&amp;merchid="
+                       data-nocache="true">
+                        <img class="round"
+                             src="../addons/ewei_shopv2/plugin/diypage/static/images/default/logo.jpg">
+                    </a>
+                    <a class="fui-list-inner"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch&amp;merchid="
+                       data-nocache="true">
+                        <div class="title">商户名称A</div>
+                        <div class="subtitle">这里是商户A的介绍</div>
+                    </a>
+                    <a class="fui-remark jump"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch.map&amp;merchid="
+                       data-nocache="true">
+                    </a>
+                </div>
+                <div class="fui-list jump">
+                    <a class="fui-list-media"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch&amp;merchid="
+                       data-nocache="true">
+                        <img class="round"
+                             src="../addons/ewei_shopv2/plugin/diypage/static/images/default/logo.jpg">
+                    </a>
+                    <a class="fui-list-inner"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch&amp;merchid="
+                       data-nocache="true">
+                        <div class="title">商户名称B</div>
+                        <div class="subtitle">这里是商户B的介绍</div>
+                    </a>
+                    <a class="fui-remark jump"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch.map&amp;merchid="
+                       data-nocache="true">
+                    </a>
+                </div>
+                <div class="fui-list jump">
+                    <a class="fui-list-media"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch&amp;merchid="
+                       data-nocache="true">
+                        <img class="round"
+                             src="../addons/ewei_shopv2/plugin/diypage/static/images/default/logo.jpg">
+                    </a>
+                    <a class="fui-list-inner"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch&amp;merchid="
+                       data-nocache="true">
+                        <div class="title">商户名称C</div>
+                        <div class="subtitle">这里是商户C的介绍</div>
+                    </a>
+                    <a class="fui-remark jump"
+                       href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=merch.map&amp;merchid="
+                       data-nocache="true">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 商户组 end -->
+
+
+            <!-- 商品组 start -->
+            <br>
+
+            <div> 商品组</div>
+
+            <br>
+            <div class="fui-goods-group block">
+                <a class="fui-goods-item" data-goodsid=""
+                   href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=goods.detail&amp;id="
+                   data-nocache="true">
+                    <div class="image   triangle"
+                         data-text="
+                            推荐                                                                                                                                                                    "
+                         data-lazyloaded="true">
+                    </div>
+                    <div class="detail">
+                        <div class="name">
+                            这里是商品标题
+                        </div>
+
+                        <span></span>
+
+
+                        <p class="productprice noheight">
+
+
+                        </p>
+                        <div class="price">
+
+                                <span class="text">
+                                    <p class="minprice">¥20.00</p>
+
+                                </span>
+                            <span class="buy buybtn-1">购买</span>
+                        </div>
+                    </div>
+                    <div class="salez"></div>
+                </a>
+                <a class="fui-goods-item" data-goodsid=""
+                   href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=goods.detail&amp;id="
+                   data-nocache="true">
+                    <div class="image   triangle"
+                         data-text="
+                            推荐                                                                                                                                                                    "
+                         data-lazyloaded="true">
+                    </div>
+                    <div class="detail">
+                        <div class="name">
+                            这里是商品标题
+                        </div>
+
+                        <span></span>
+
+
+                        <p class="productprice noheight">
+
+
+                        </p>
+                        <div class="price">
+
+                                <span class="text">
+                                    <p class="minprice">¥20.00</p>
+
+                                </span>
+                            <span class="buy buybtn-1">购买</span>
+                        </div>
+                    </div>
+                    <div class="salez"></div>
+                </a>
+                <a class="fui-goods-item" data-goodsid=""
+                   href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=goods.detail&amp;id="
+                   data-nocache="true">
+                    <div class="image   triangle"
+                         data-text="
+                            推荐                                                                                                                                                                    "
+                         data-lazyloaded="true">
+                    </div>
+                    <div class="detail">
+                        <div class="name">
+                            这里是商品标题
+                        </div>
+
+                        <span></span>
+
+
+                        <p class="productprice noheight">
+
+
+                        </p>
+                        <div class="price">
+
+                                <span class="text">
+                                    <p class="minprice">¥20.00</p>
+
+                                </span>
+                            <span class="buy buybtn-1">购买</span>
+                        </div>
+                    </div>
+                    <div class="salez"></div>
+                </a>
+                <a class="fui-goods-item" data-goodsid=""
+                   href="./index.php?i=4&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=goods.detail&amp;id="
+                   data-nocache="true">
+                    <div class="image   triangle"
+                         data-text="
+                            推荐                                                                                                                                                                    "
+                         data-lazyloaded="true">
+                    </div>
+                    <div class="detail">
+                        <div class="name">
+                            这里是商品标题
+                        </div>
+
+                        <span></span>
+
+
+                        <p class="productprice noheight">
+
+
+                        </p>
+                        <div class="price">
+
+                                <span class="text">
+                                    <p class="minprice">¥20.00</p>
+
+                                </span>
+                            <span class="buy buybtn-1">购买</span>
+                        </div>
+                    </div>
+                    <div class="salez"></div>
+                </a>
+            </div>
+
+
+            <!-- 商品组 end -->
+
+            <br>
+
+            <div> 标题栏</div>
+
+            <br>
+
+            <!-- title start  -->
+            <div class="fui-title">
+                <a href="">
+                    123 </a>
+            </div>
+
+            <!-- title end -->
+            <br>
+
+
+            <div>辅助类</div>
+            <br>
+
+            <ul>
+                <li class="text-white">text-white</li>
+                <li class="text-default">text-default</li>
+                <li class="text-cancel">text-cancel</li>
+                <li class="text-success">text-success</li>
+                <li class="text-primary">text-primary</li>
+                <li class="text-warning">text-warning</li>
+
+
+                <li class="text-danger">text-danger</li>
+                <li class="text-center">text-center</li>
+                <li class="text-right">text-right</li>
+                <li class="text-bold">text-bold</li>
+
+                <li>
+                    <br>
+                    浮动
+
+                    <br>
+                </li>
+                <li style="overflow: hidden;">
+
+                    <div class="pull-right">pull-right</div>
+                    <div class="pull-left"> pull-left</div>
+                </li>
+            </ul>
+
+            <br>
+
+            <div>按钮</div>
+            <br>
+
+            <ul>
+                <li>
+                    <button class="btn btn-default">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-success">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-primary">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-warning">按钮</button>
+                </li>
+
+                <li>
+                    <button class="btn btn-danger">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-danger-o">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-warning-o">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-primary-o">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-success-o">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-default-o">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-success block ">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-success  fullbtn ">按钮</button>
+                </li>
+                <li>
+                    <button class="btn btn-success  btn-sm">按钮</button>
+                </li>
+            </ul>
+            <br>
+
+            <div>按钮组</div>
+            <br>
+
+            <div class="fui-btn-group fui-btn-group-default">
+                <a href="">按钮组</a>
+            </div>
+            <div class="fui-btn-group fui-btn-group-success">
+                <a href="">按钮组</a>
+            </div>
+            <div class="fui-btn-group fui-btn-group-primary">
+                <a href="">按钮组</a>
+            </div>
+            <div class="fui-btn-group fui-btn-group-warning">
+                <a href="">按钮组</a>
+            </div>
+            <div class="fui-btn-group fui-btn-group-danger">
+                <a href="">按钮组</a>
+            </div>
+            <br>
+
+            <div>头部 使用时去掉 style='.*'</div>
+            <br>
+
+            <div class="fui-header" style="position: static;">
+                <a class="back"></a>
+                <div class="title" style="position: static;">头部</div>
+            </div>
+            <div>头部 使用时去掉 style='.*'</div>
+            <br>
+
+            <div class="fui-header fui-header-success " style="position: static;">
+
+                <a class="back"></a>
+                <div class="title" style="position: static;">头部</div>
+            </div>
+            <div class="fui-header fui-header-danger " style="position: static;">
+
+                <a class="back"></a>
+                <div class="title" style="position: static;">头部</div>
+            </div>
+            <div class="fui-header fui-header-primary " style="position: static;">
+
+                <a class="back"></a>
+                <div class="title" style="position: static;">头部</div>
+            </div>
+            <div class="fui-header fui-header-warning " style="position: static;">
+
+                <a class="back"></a>
+                <div class="title" style="position: static;">头部</div>
+            </div>
+
+            <br>
+            <div>徽章</div>
+            <br>
+
+            <div class="badge">badge</div>
+            <div class="badge badge-primary">badge-primary</div>
+            <div class="badge badge-success">badge-success</div>
+            <div class="badge badge-warning">badge-warning</div>
+            <div class="badge badge-danger">badge-danger</div>
+
+        </div>
+        <!-- 中间内容容器end -->
+        <!-- start底部部分  -->
+        <!-- 底部区域 -->
+        <div class="fui-footer"></div>
+        <!-- 底部导航区域 -->
+        <div class="fui-navbar"></div>
+        <!-- 底部部分end -->
+    </div>
+</section>
+
+
+<script>
+    //页面初始化（必须）
+    require(['../js/app/init']);
+
+    //requireJS使用示例
+    require(['jquery', 'jquery.gcjs', 'foxui'], function ($, gc, foxui) {
+
+
+    })
+</script>
 </body>
 
 </html>
