@@ -15,7 +15,9 @@ require.config({
         'ydb':'./Ydb/YdbOnline',
         'swiper':'./swiper/swiper.min',
         'jquery.fly': './jquery/jquery.fly',
-
+        'core': './core',
+        
+        'mobile': './mobile',
     },
     shim: {
         'foxui':{

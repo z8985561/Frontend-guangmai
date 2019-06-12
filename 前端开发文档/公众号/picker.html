@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>Picker</title>
+    <!-- 商城UI样式库（必须） -->
+    <link rel="stylesheet" href="lib/foxui/css/foxui.min.css">
+    <!-- icon字体 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <!-- 商城自定义样式 -->
+    <link rel="stylesheet" href="css/foxui.diy.css">
+    <link rel="stylesheet" href="lib/swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- requireJS相关引入（必须） -->
+    <script src="lib/require.js"></script>
+    <script src="js/myconfig-app.js"></script>
+
+    <script language="javascript">
+        require(['../js/app/core'], function (modal) {
+            modal.init({
+                siteUrl: "http://www.w7.cc/",
+                baseUrl: "./index.php?i=4&c=entry&m=ewei_shopv2&do=mobile&r=ROUTES"
+            })
+        });
+    </script>
+</head>
+
+<body ontouchstart>
+    <!-- 人人商城H5模板基本结构 -->
+    <!-- fui-page-group主体结构 -->
+    <section class='fui-page-group statusbar'>
+        <div class='fui-page fui-page-current'>
+            <!-- start头部结构（必须） -->
+            <div class="fui-header">
+                <!-- 左边返回按钮 不需要可以删除-->
+                <div class="fui-header-left">
+                    <a class="back"></a>
+                </div>
+                <!-- 标题 -->
+                <div class="title">Picker</div>
+                <!-- 右边可以放分享按钮 -->
+                <div class="fui-header-right"></div>
+            </div>
+            <!-- 头部结构end -->
+            <!-- start中间内容容器 fui-content（必须） -->
+            <div class="fui-content navbar">
+
+                <div class="fui-cell-group">
+                    <div class='fui-cell'>
+                        <div class='fui-cell-label'>picker</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="picker" placeholder="请选择" readonly />
+                        </div>
+                    </div>
+                    <div class='fui-cell'>
+                        <div class='fui-cell-label'>datetime</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="datetime" placeholder="请选择" readonly />
+                        </div>
+                    </div>
+                    <div class='fui-cell'>
+                        <div class='fui-cell-label'>date</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="date" placeholder="请选择" readonly />
+                        </div>
+                    </div>
+                    <div class='fui-cell'>
+                        <div class='fui-cell-label'>time</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="time" placeholder="请选择" readonly />
+                        </div>
+                    </div>
+                    <div class='fui-cell'>
+                        <div class='fui-cell-label'>relate</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="relate" placeholder="请选择" readonly />
+                        </div>
+                    </div>
+
+                    <div class='fui-cell' id="div_province">
+                        <div class='fui-cell-label'>代理省份</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="citypicker1" placeholder="请选择代理省份" readonly />
+                        </div>
+                    </div>
+
+                    <div class='fui-cell' id="div_city">
+                        <div class='fui-cell-label'>代理城市</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="citypicker2" placeholder="请选择代理城市" readonly />
+                        </div>
+                    </div>
+
+                    <div class='fui-cell' id="div_area">
+                        <div class='fui-cell-label'>代理地区</div>
+                        <div class='fui-cell-info'>
+                            <input type="text" class='fui-input' id="citypicker3" placeholder="请选择代理地区" readonly />
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- 中间内容容器end -->
+            <!-- start底部部分  -->
+            <!-- 底部区域 -->
+            <div class="fui-footer"></div>
+            <!-- 底部导航区域 -->
+            <div class="fui-navbar"></div>
+            <!-- 底部部分end -->
+        </div>
+    </section>
+
+
+    <script>
+        //页面初始化（必须）
+        require(['../js/app/init']);
+
+        //requireJS使用示例
+        require(['jquery', 'jquery.gcjs', 'foxui', 'mobile', 'foxui.picker'], function ($, gc, foxui, mobile, spicker) {
+            $('#citypicker1').cityPicker({
+                showArea: false,
+                showCity: false
+            });
+            $('#citypicker2').cityPicker({
+                showArea: false
+            });
+            $('#citypicker3').cityPicker({});
+            $('#picker').picker({
+                title: 'title',
+                columns: {
+                    column: {
+                        values: [{
+                            value: 'text1',
+                            text: 'text1'
+                        },
+                        {
+                            value: 'text2',
+                            text: 'text2'
+                        },
+                        {
+                            value: 'text3',
+                            text: 'text3'
+                        }]
+                    }
+
+                }
+            });
+            $('#datetime').datetimePicker({});
+            $('#date').datePicker({});
+            $('#time').timePicker({});
+            $('#relate').relatePicker({
+                columns: [
+                    {
+                        values: [
+                            {
+                                text: '北京',
+                                children: [
+                                    {
+                                        text: '北京市',
+                                        children: [
+                                            '区1', '区2', '区3', '区4'
+                                        ]
+                                    }
+                                ]
+
+                            },
+                            {
+                                text: '广西',
+                                children: [
+                                    {
+                                        text: '梧州市',
+                                        children: [
+                                        '蝶山区', '万秀区', '长洲区', '龙圩区'
+                                        ]
+                                    },
+                                    {
+                                        text: '南宁市',
+                                        children: [
+                                            '青秀区', '西乡塘区'
+                                        ]
+                                    }
+                                ]
+
+                            },
+                            {
+                                text: '广东',
+                                children: [
+                                    {
+                                        text: '广州市',
+                                        children: [
+                                            1, 2, 3, 4
+                                        ]
+                                    }
+                                ]
+
+                            }
+                        ]
+                    },
+                    {},
+                    {}
+                ]
+            });
+
+
+
+        })
+    </script>
+</body>
+
+</html>
